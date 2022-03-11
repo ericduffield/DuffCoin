@@ -1,0 +1,18 @@
+{
+  "CONTRACT_ADDRESS": "0x6628fb2ea87181eaee6e07ab5812a471a70f9879",
+  "SCAN_LINK": "https://testnet.bscscan.com/address/0x6628fb2ea87181eaee6e07ab5812a471a70f9879",
+  "NETWORK": {
+    "NAME": "Binance Smart Chain",
+    "SYMBOL": "BNB",
+    "ID": 56
+  },
+  "NFT_NAME": "DUFF",
+  "SYMBOL": "DUFF NFT",
+  "MAX_SUPPLY": 25,
+  "WEI_COST": 100000000000000,
+  "DISPLAY_COST": 0.0001,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "Marketplace",
+  "MARKETPLACE_LINK": "/",
+  "SHOW_BACKGROUND": true
+}
