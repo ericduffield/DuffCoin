@@ -131,7 +131,7 @@ nav img {
 }
 
 #info{
-  font-size: 50px;
+  font-size: 45px;
 }
 
 #top{
@@ -191,7 +191,7 @@ nav img {
 
 #buySection p{
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
@@ -401,13 +401,8 @@ nav img {
     display: none;
    }
 
-   nav img{
-    display: none;
-   }
 
-   #name{
-    text-align: center;
-   }
+
    
   #top{
     grid-template-columns: 1fr;
@@ -417,7 +412,9 @@ nav img {
     "add"
   }
 
-
+  #info{
+    display: none;
+  }
 
   #chart{
     height: 25rem;
