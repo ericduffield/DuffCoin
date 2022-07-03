@@ -12,10 +12,10 @@ export const StyledButton = styled.button`
   padding: 10px;
   border-radius: 50px;
   border: none;
-  background-color: #007F9A;
+  background-color: var(--primary);
   padding: 10px;
   font-weight: bold;
-  color: var(--secondary-text);
+  color: var(--text);
   width: 100px;
   cursor: pointer;
 `;
@@ -24,11 +24,10 @@ export const StyledRoundButton = styled.button`
   padding: 10px;
   border-radius: 100%;
   border: none;
-  background-color: var(--primary);
   padding: 10px;
   font-weight: bold;
   font-size: 15px;
-  color: var(--primary-text);
+  color: var(--text);
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -52,7 +51,7 @@ export const ResponsiveWrapper = styled.div`
   justify-content: stretched;
   align-items: stretched;
   width: 100%;
-  @media (min-width: 767px) {
+  @media (min-width: 850px) {
     flex-direction: row;
   }
 `;
@@ -60,7 +59,7 @@ export const ResponsiveWrapper = styled.div`
 export const StyledLogo = styled.img`
   width: 100px;
   border-radius: 10%;
-  @media (min-width: 767px) {
+  @media (min-width: 850px) {
     width: 150px;
   }
   transition: width 0.5s;
@@ -69,20 +68,17 @@ export const StyledLogo = styled.img`
 
 export const StyledImg = styled.img`
   border: none;
-  background-color: var(--accent);
+  background-color: var(--grey);
   border-radius: 10%;
-  width: 100px;
-  @media (min-width: 767px) {
-    width: 150px;
+  width: 80%;
+  max-width: 220px;
+  @media (max-width: 850px) {
+    width: 160px;
   }
-  @media (min-width: 1150px) {
-    width: 220px;
-  }
-  transition: width 0.5s;
 `;
 
 export const StyledLink = styled.a`
-  color: #007F9A;
+  color: var(--primaryText);
   text-decoration: none;
 `;
 
@@ -107,8 +103,6 @@ function App() {
     WEI_COST: 0,
     DISPLAY_COST: 0,
     GAS_LIMIT: 0,
-    MARKETPLACE: "",
-    MARKETPLACE_LINK: "",
     SHOW_BACKGROUND: false,
   });
 
@@ -190,13 +184,18 @@ function App() {
       <s.Container
         flex={1}
         ai={"center"}
-        style={{ padding: 24, backgroundColor: "#202020" }}
-        image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
+        style={{ padding: 24, backgroundColor: "var(--background)" }}
       >
-        <a href={CONFIG.MARKETPLACE_LINK}>
-          <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
-        </a>
-        <s.SpacerSmall />
+        <s.TextTitle
+          style={{
+            textAlign: "center",
+            fontSize: 50,
+            fontWeight: "bold",
+            color: "var(--text)",
+          }}
+        >
+          Duff Coin NFTs
+        </s.TextTitle>
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg alt={"example"} src={"/config/images/example.gif"} />
@@ -207,7 +206,7 @@ function App() {
             jc={"center"}
             ai={"center"}
             style={{
-              backgroundColor: "var(--accent)",
+              backgroundColor: "var(--grey)",
               padding: 24,
               borderRadius: 24,
               border: "none",
@@ -218,66 +217,51 @@ function App() {
                 textAlign: "center",
                 fontSize: 50,
                 fontWeight: "bold",
-                color: "var(--accent-text)",
+                color: "var(--text)",
+                margin: "0 0 1rem 0"
               }}
             >
-              {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+              {CONFIG.MAX_SUPPLY} / {CONFIG.MAX_SUPPLY} SOLD OUT
             </s.TextTitle>
             <s.TextDescription
               style={{
                 textAlign: "center",
-                color: "var(--primary-text)",
+                color: "var(--text)",
+                margin: "0 0 0.5rem 0"
               }}
             >
               <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
-                {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
+                {truncate(CONFIG.CONTRACT_ADDRESS, 25)}
               </StyledLink>
             </s.TextDescription>
             <span
               style={{
-                textAlign: "center",
+                textAlign: "center"
               }}
             >
-              <StyledButton
-                style={{
-                  margin: "5px",
-                }}
-                onClick={(e) => {
-                  window.open(CONFIG.MARKETPLACE_LINK, "_blank");
-                }}
-              >
-                {CONFIG.MARKETPLACE}
-              </StyledButton>
             </span>
             <s.SpacerSmall />
             {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
               <>
-                <s.TextTitle
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
-                >
-                  The sale has ended.
-                </s.TextTitle>
-                <s.TextDescription
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
-                >
-                  You can still find {CONFIG.NFT_NAME} on
-                </s.TextDescription>
-                <s.SpacerSmall />
-                <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
-                  {CONFIG.MARKETPLACE}
-                </StyledLink>
+
               </>
             ) : (
               <>
                 <s.TextTitle
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  style={{
+                    textAlign: "center", color: "var(--text)",
+                    margin: "0 0 0.3rem 0"
+                  }}
                 >
                   1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
                   {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  style={{
+                    textAlign: "center", color: "var(--text)",
+                    margin: "0 0 0.3rem 0"
+                  }}
                 >
                   Excluding gas fees.
                 </s.TextDescription>
@@ -288,7 +272,8 @@ function App() {
                     <s.TextDescription
                       style={{
                         textAlign: "center",
-                        color: "var(--accent-text)",
+                        color: "var(--text)",
+                        margin: "0 0 1rem 0"
                       }}
                     >
                       Connect to the {CONFIG.NETWORK.NAME} network
@@ -309,7 +294,7 @@ function App() {
                         <s.TextDescription
                           style={{
                             textAlign: "center",
-                            color: "var(--accent-text)",
+                            color: "var(--text)",
                           }}
                         >
                           {blockchain.errorMsg}
@@ -322,7 +307,7 @@ function App() {
                     <s.TextDescription
                       style={{
                         textAlign: "center",
-                        color: "var(--accent-text)",
+                        color: "var(--text)",
                       }}
                     >
                       {feedback}
@@ -343,7 +328,7 @@ function App() {
                       <s.TextDescription
                         style={{
                           textAlign: "center",
-                          color: "var(--accent-text)",
+                          color: "var(--text)",
                         }}
                       >
                         {mintAmount}
@@ -378,10 +363,12 @@ function App() {
             )}
             <s.SpacerMedium />
           </s.Container>
-          <s.SpacerLarge />
+          <s.SpacerLarge
+            id={"hideSpacer"} />
           <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg
               alt={"example"}
+              id={"hideGif"}
               src={"/config/images/example.gif"}
               style={{ transform: "scaleX(1)" }}
             />
@@ -392,7 +379,7 @@ function App() {
           <s.TextDescription
             style={{
               textAlign: "center",
-              color: "var(--primary-text)",
+              color: "var(--text)",
             }}
           >
             Please make sure you are connected to the right network (

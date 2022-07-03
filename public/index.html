@@ -10,13 +10,174 @@
   <link rel="stylesheet" href="./config/theme.css" />
   <link rel="apple-touch-icon" href="./logo192.png" />
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <link rel="manifest" href="./manifest.json" />
 
   <title>Duff Coin</title>
-  <meta name="description" content="Mint your Duff Coin NFT's" />
+  <meta name="description" content="width=device-width, initial-scale=1, maximum-scale=1" />
 </head>
 
 <body>
+  <nav>
+    <a id="name" href="https://duffcoincrypto.com/">DUFF COIN</a>
+
+    <a id="dark-mode">
+      <span id="mode-logo" class="material-icons-sharp">light_mode</span>
+      <h3 id="mode-text">Light Mode</h3>
+    </a>
+    <img src="./logo512.png" alt="Duff Coin Logo">
+  </nav>
+
+
+  <div class="container">
+    <h3 id="info">Duff Coin Info</h3>
+    <div id="top">
+
+      <div id="price">
+        <p id="priceName"><span class="bold">Price:</span> $<span id="priceBox"></span>
+        </p>
+
+        <p id="marketCap"><span class="bold">Market Cap:</span> $<span id="mkt"></span></p>
+
+        <div id="currency">
+          <p>Currency: </p>
+          <select id="country">
+            <option default selected="selected">USD</option>
+            <option>CAD</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div id="buySection" class="center">
+        <p>Duff Coin is available for trade <br> on <a class="link"
+            href="https://pancakeswap.finance/swap?outputCurrency=0x8e047ec4c07d1c535a587c1193a9486e67727163">PancakeSwap</a>
+        </p>
+        <a id="buy"
+          href="https://pancakeswap.finance/swap?outputCurrency=0x8e047ec4c07d1c535a587c1193a9486e67727163">Buy
+          Now</a>
+      </div>
+
+      <div id="add" class="center">
+        <p id="add-text">Add the DUFF token <br> to Metamask</p>
+        <a id="addA"><img id="addImg" src="/config/images/logo.png" alt="">
+          <p id="ticker">$DUFF</p>
+        </a>
+      </div>
+
+    </div>
+
+    <div id="contract">
+      <h3>Contract Address</h3>
+      <div id="ca">
+        <span id="copied">Copied!</span><span class="hover" id="address"
+          title="Copy to clipboard">0x8E047Ec4c07d1C535a587C1193A9486E67727163</span>
+        <span class="hover" title="Copy to clipboard"><img id="copy" src="/config/images/copyWhite.svg" alt=""></span>
+      </div>
+    </div>
+
+    <div id="about">
+      <h3>About Duff Coin</h3>
+
+      <p><span>Duff Coin</span> is a cryptocurrency token that runs on the Binance Smart Chain (BSC).
+        The BSC blockchain uses a Proof of Stake (POS) consensus mechanism meaning that $DUFF has an extremely low
+        energy expenditure
+        compared to proof of stake blockchains. POS also has many other benefits such as much faster and cheaper
+        transactions.
+        <br><br>
+        The goal of <span>Duff Coin</span> is to replace the US dollar as the World Reserve Currency and allow for fast
+        international
+        and eventually interplanetary transactions. There is a hard cap of 1 billion <span>$DUFF</span> tokens and
+        inflation
+        will be 0%.
+        It is extremely divisible, up to 18 decimals allowing for extreme scalability and any kind of trade.
+        <br><br>
+        The <span>DUFF</span> ecosystem is always expanding with the recent release of <a class="link" href="#root">Duff
+          Coin NFTs</a>.
+        New updates and developments coming soon, stay tuned for more details.
+      </p>
+    </div>
+
+    <div id="socials">
+      <h3>Socials</h3>
+      <ul>
+        <li>
+          <a href="https://twitter.com/DuffCoinCrypto">
+            <img src="/config/images/Twitter.svg" alt="Twitter">
+            <div class="socialName">
+              <p>Twitter</p>
+            </div>
+            <img src="/config/images/blank.png">
+          </a>
+        </li>
+        <li>
+          <a href="https://discord.gg/7r5WCRAV3d">
+            <img src="/config/images/Discord.svg" alt="Discord">
+            <div class="socialName">
+              <p>Discord</p>
+            </div>
+            <img src="/config/images/blank.png">
+          </a>
+        </li>
+        <li>
+          <a href="https://pancakeswap.finance/swap?outputCurrency=0x8e047ec4c07d1c535a587c1193a9486e67727163">
+            <img src="/config/images/pankakeswap.png" alt="PancakeSwap">
+            <div class="socialName">
+              <p>Pankakeswap</p>
+            </div>
+            <img src="/config/images/blank.png">
+          </a>
+        </li>
+        <li>
+          <a href="https://coinsgem.com/chart/0x8e047ec4c07d1c535a587c1193a9486e67727163">
+            <img src="/config/images/pricechart.png" alt="Price Chart">
+            <div class="socialName">
+              <p>Price Chart</p>
+            </div>
+            <img src="/config/images/blank.png">
+          </a>
+        </li>
+        <li>
+          <a href="https://bscscan.com/address/0x8e047ec4c07d1c535a587c1193a9486e67727163">
+            <img src="/config/images/bscscan.webp" alt="BSC Scan">
+            <div class="socialName">
+              <p>BscScan</p>
+            </div>
+            <img src="/config/images/blank.png">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="tokenomics">
+      <h3>Tokenomics</h3>
+      <p><span>Ticker:</span> DUFF</p>
+      <p><span>Total supply:</span> 1,000,000,000</p>
+      <p><span>Inflation:</span> 0%</p>
+      <p id="network"><span>Network:</span> Binance Smart Chain</p>
+      <img id="chart" src="/config/images/lightChart.png" alt="chart">
+    </div>
+
+    <!--
+      <p>DISCLOSURE By purchasing Duff Coin, you agree that you are not purchasing a security or investment contract and
+      you
+      agree to hold the team harmless and not liable for any losses or taxes you may incur. Although DUFF is a community
+      driven DeFi Ecosystem and not a registered digital currency, always make sure that you are in compliance with
+      local laws
+      and regulations before you make any purchase. Cryptocurrencies are not legal tender and are not investments.</p>
+
+     -->
+
+  </div>
+
+
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
 
