@@ -337,6 +337,7 @@ nav img {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   width: 75%;
+  text-align: justify;
 }
 
 .link{
@@ -356,7 +357,7 @@ nav img {
 #tokenomics p{
   font-size: 1.15rem;
   margin-bottom: 1rem;
-  width: 75%;
+  text-align: center;
 }
 
 #network{
