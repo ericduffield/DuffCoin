@@ -158,12 +158,22 @@ getResults();
 
 let currency = document.getElementById("country");
 
-let priceUSD = 0.000001168;
-let marketCapUSD = priceUSD * 1000000000;
+let BNBPrice;
+let priceUSD;
+let marketCapUSD;
+
+
 
 currency.addEventListener('change', setPrice);
 
-function setPrice() {
+async function setPrice() {
+  BNBPrice = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BNBUSDT')
+    .then(response => response.json())
+    .then(data => data.price);
+
+  priceUSD = BNBPrice / 186924351;
+  marketCapUSD = priceUSD * 1000000000;
+
   if (currency.value == "USD") {
     document.getElementById("priceBox").innerHTML = priceUSD.toFixed(9);
     document.getElementById("mkt").innerHTML = marketCapUSD.toFixed(2);
@@ -175,83 +185,3 @@ function setPrice() {
 }
 
 setPrice();
-
-
-// const cheerio = require('cheerio');
-// const request = require('request');
-
-
-// request({
-//   method: 'GET',
-//   url: 'https://poocoin.app/tokens/0x8e047ec4c07d1c535a587c1193a9486e67727163'
-// }, (err, res, body) => {
-
-//   if (err) return console.error(err);
-
-//   let $ = cheerio.load(body);
-
-//   console.log(body);
-
-//   // let h1El = $('h1');
-
-//   // let parentEl = h1El.parent();
-
-//   // console.log(parentEl.get(0).tagName)
-// });
-
-// request("https://poocoin.app/tokens/0x8e047ec4c07d1c535a587c1193a9486e67727163", (error, response, html) => {
-//   if (!error && response.statusCode == 200) {
-//     const $ = cheerio.load(html);
-//     const price = $(".text-success").text();
-//     console.log(price);
-//     // const priceCAD = $("#priceCAD").text();
-//     // const priceUSD = $("#priceUSD").text();
-//     // document.getElementById("priceBox").innerHTML = price;
-//     // document.getElementById("priceBoxCAD").innerHTML = priceCAD;
-//     // document.getElementById("priceBoxUSD").innerHTML = priceUSD;
-//   }
-// }
-// )
-
-
-
-
-/*
-
-
-const serverUrl = "https://hxrtemgwxrjg.usemoralis.com:2053/server";
-const appId = "YTK0wWO3TvSWvY5cGImwATTFZ6TRDthyI16quJOZ";
-Moralis.start({ serverUrl, appId });
-
-const currencyApi = "https://api.exchangerate-api.com/v4/latest/USD";
-
-async function getData() {
-
-  let currencyResponse = await fetch(currencyApi);
-  let currencyData = await currencyResponse.json();
-
-  let multiplier = currencyData.rates.CAD;
-
-  const options = {
-    address: "0x8e047ec4c07d1c535a587c1193a9486e67727163",
-    chain: "bsc",
-    exchange: "PancakeSwapv2"
-  };
-  const price = await Moralis.Web3API.token.getTokenPrice(options);
-
-  priceUSD = price.usdPrice;
-  priceCAD = price.usdPrice * multiplier;
-
-  if (document.getElementById("currency").value == "USD") {
-    document.getElementById("priceBox").innerHTML = priceUSD.toFixed(9);
-  }
-  else {
-    document.getElementById("priceBox").innerHTML = priceCAD.toFixed(9);
-  }
-}
-
-
-
-getData();
-*/
-
