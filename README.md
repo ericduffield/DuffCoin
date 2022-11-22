@@ -1,6 +1,5 @@
-# Duff Coin
-
 <div align="center">
+  <h1>Duff Coin</h1>
   <a href="https://duffcoincrypto.com/">
     <img width="150" src="https://raw.githubusercontent.com/ericduffield/DuffCoin/main/public/config/images/logo.png">
   </a>
