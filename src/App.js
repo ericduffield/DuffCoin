@@ -9,14 +9,13 @@ const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
 
 export const StyledButton = styled.button`
-  padding: 10px;
-  border-radius: 50px;
+  border-radius: 15px;
   border: none;
   background-color: var(--primary);
-  padding: 10px;
+  padding: 15px 20px;
+  font-size: 1rem;
   font-weight: bold;
   color: var(--text);
-  width: 100px;
   cursor: pointer;
 `;
 
@@ -26,7 +25,7 @@ export const StyledRoundButton = styled.button`
   border: none;
   padding: 10px;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 1rem;
   color: var(--text);
   width: 30px;
   height: 30px;
@@ -51,7 +50,7 @@ export const ResponsiveWrapper = styled.div`
   justify-content: stretched;
   align-items: stretched;
   width: 100%;
-  @media (min-width: 850px) {
+  @media (min-width: 1250px) {
     flex-direction: row;
   }
 `;
@@ -59,7 +58,7 @@ export const ResponsiveWrapper = styled.div`
 export const StyledLogo = styled.img`
   width: 100px;
   border-radius: 10%;
-  @media (min-width: 850px) {
+  @media (min-width: 1250px) {
     width: 150px;
   }
   transition: width 0.5s;
@@ -71,9 +70,12 @@ export const StyledImg = styled.img`
   background-color: var(--grey);
   border-radius: 10%;
   width: 80%;
-  max-width: 220px;
+  max-width: 290px;
+  @media (max-width: 1250px) {
+    width: 280px;
+  }
   @media (max-width: 850px) {
-    width: 160px;
+    width: 180px;
   }
 `;
 
@@ -182,208 +184,213 @@ function App() {
   return (
     <s.Screen>
       <s.Container
-        flex={1}
-        ai={"center"}
-        style={{ padding: 24, backgroundColor: "var(--background)" }}
+        flex={ 1 }
+        ai={ "center" }
+        style={ { padding: 24, backgroundColor: "var(--background)" } }
       >
         <s.TextTitle
-          style={{
+          style={ {
             textAlign: "center",
-            fontSize: 45,
+            fontSize: "3.8rem",
             fontWeight: "bold",
             color: "var(--text)",
-          }}
+          } }
         >
           Duff Coin NFTs
         </s.TextTitle>
-        <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
-          <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"gif"} src={"/config/images/gif.gif"} />
+        <ResponsiveWrapper flex={ 1 } style={ { padding: 24 } } test>
+          <s.Container flex={ 1 } jc={ "center" } ai={ "center" }>
+            <StyledImg alt={ "gif" } src={ "/config/images/gif.gif" } />
           </s.Container>
           <s.SpacerLarge />
           <s.Container
-            flex={2}
-            jc={"center"}
-            ai={"center"}
-            style={{
+            flex={ 2 }
+            jc={ "center" }
+            ai={ "center" }
+            style={ {
               backgroundColor: "var(--grey)",
               padding: 24,
               borderRadius: 24,
               border: "none",
-            }}
+            } }
           >
             <s.TextTitle
-              style={{
+              style={ {
                 textAlign: "center",
-                fontSize: 45,
+                fontSize: "2.9rem",
                 fontWeight: "bold",
                 color: "var(--text)",
                 margin: "0 0 1rem 0"
-              }}
+              } }
             >
-              {CONFIG.MAX_SUPPLY} / {CONFIG.MAX_SUPPLY} SOLD OUT
+              { CONFIG.MAX_SUPPLY } / { CONFIG.MAX_SUPPLY } SOLD OUT
             </s.TextTitle>
             <s.TextDescription
-              style={{
+              style={ {
+                fontSize: "1.3rem",
                 textAlign: "center",
                 color: "var(--text)",
                 margin: "0 0 0.5rem 0"
-              }}
+              } }
             >
-              <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
-                {truncate(CONFIG.CONTRACT_ADDRESS, 25)}
+              <StyledLink target={ "_blank" } href={ CONFIG.SCAN_LINK }>
+                { truncate(CONFIG.CONTRACT_ADDRESS, 20) }
               </StyledLink>
             </s.TextDescription>
             <span
-              style={{
+              style={ {
                 textAlign: "center"
-              }}
+              } }
             >
             </span>
             <s.SpacerSmall />
-            {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
+            { Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
               <>
 
               </>
             ) : (
               <>
                 <s.TextTitle
-                  style={{
+                  style={ {
+                    fontSize: "1.3rem",
                     textAlign: "center", color: "var(--text)",
                     margin: "0 0 0.3rem 0"
-                  }}
+                  } }
                 >
-                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
+                  1 { CONFIG.SYMBOL } costs { CONFIG.DISPLAY_COST }{ " " }
+                  { CONFIG.NETWORK.SYMBOL }.
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
-                  style={{
+                  style={ {
+                    fontSize: "1.3rem",
                     textAlign: "center", color: "var(--text)",
                     margin: "0 0 0.3rem 0"
-                  }}
+                  } }
                 >
                   Excluding gas fees.
                 </s.TextDescription>
                 <s.SpacerSmall />
-                {blockchain.account === "" ||
+                { blockchain.account === "" ||
                   blockchain.smartContract === null ? (
-                  <s.Container ai={"center"} jc={"center"}>
+                  <s.Container ai={ "center" } jc={ "center" }>
                     <s.TextDescription
-                      style={{
+                      style={ {
+                        fontSize: "1.1rem",
                         textAlign: "center",
                         color: "var(--text)",
                         margin: "0 0 1rem 0"
-                      }}
+                      } }
                     >
-                      Connect to the {CONFIG.NETWORK.NAME} network
+                      Connect to the { CONFIG.NETWORK.NAME } network
                     </s.TextDescription>
                     <s.SpacerSmall />
                     <StyledButton
-                      onClick={(e) => {
+                      onClick={ (e) => {
                         e.preventDefault();
                         dispatch(connect());
                         getData();
-                      }}
+                      } }
                     >
                       CONNECT
                     </StyledButton>
-                    {blockchain.errorMsg !== "" ? (
+                    { blockchain.errorMsg !== "" ? (
                       <>
                         <s.SpacerSmall />
                         <s.TextDescription
-                          style={{
+                          style={ {
                             textAlign: "center",
                             color: "var(--text)",
-                          }}
+                          } }
                         >
-                          {blockchain.errorMsg}
+                          { blockchain.errorMsg }
                         </s.TextDescription>
                       </>
-                    ) : null}
+                    ) : null }
                   </s.Container>
                 ) : (
                   <>
                     <s.TextDescription
-                      style={{
+                      style={ {
                         textAlign: "center",
                         color: "var(--text)",
-                      }}
+                      } }
                     >
-                      {feedback}
+                      { feedback }
                     </s.TextDescription>
                     <s.SpacerMedium />
-                    <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                    <s.Container ai={ "center" } jc={ "center" } fd={ "row" }>
                       <StyledRoundButton
-                        style={{ lineHeight: 0.4 }}
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
+                        style={ { lineHeight: 0.4 } }
+                        disabled={ claimingNft ? 1 : 0 }
+                        onClick={ (e) => {
                           e.preventDefault();
                           decrementMintAmount();
-                        }}
+                        } }
                       >
                         -
                       </StyledRoundButton>
                       <s.SpacerMedium />
                       <s.TextDescription
-                        style={{
+                        style={ {
                           textAlign: "center",
                           color: "var(--text)",
-                        }}
+                        } }
                       >
-                        {mintAmount}
+                        { mintAmount }
                       </s.TextDescription>
                       <s.SpacerMedium />
                       <StyledRoundButton
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
+                        disabled={ claimingNft ? 1 : 0 }
+                        onClick={ (e) => {
                           e.preventDefault();
                           incrementMintAmount();
-                        }}
+                        } }
                       >
                         +
                       </StyledRoundButton>
                     </s.Container>
                     <s.SpacerSmall />
-                    <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                    <s.Container ai={ "center" } jc={ "center" } fd={ "row" }>
                       <StyledButton
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
+                        disabled={ claimingNft ? 1 : 0 }
+                        onClick={ (e) => {
                           e.preventDefault();
                           claimNFTs();
                           getData();
-                        }}
+                        } }
                       >
-                        {claimingNft ? "BUSY" : "BUY"}
+                        { claimingNft ? "BUSY" : "BUY" }
                       </StyledButton>
                     </s.Container>
                   </>
-                )}
+                ) }
               </>
-            )}
+            ) }
             <s.SpacerMedium />
           </s.Container>
           <s.SpacerLarge
-            id={"hideSpacer"} />
-          <s.Container flex={1} jc={"center"} ai={"center"}>
+            id={ "hideSpacer" } />
+          <s.Container flex={ 1 } jc={ "center" } ai={ "center" }>
             <StyledImg
-              alt={"gif"}
-              id={"hideGif"}
-              src={"/config/images/gif.gif"}
-              style={{ transform: "scaleX(1)" }}
+              alt={ "gif" }
+              id={ "hideGif" }
+              src={ "/config/images/gif.gif" }
+              style={ { transform: "scaleX(1)" } }
             />
           </s.Container>
         </ResponsiveWrapper>
         <s.SpacerMedium />
-        <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
+        <s.Container jc={ "center" } ai={ "center" } style={ { width: "70%" } }>
           <s.TextDescription
-            style={{
+            style={ {
               textAlign: "center",
               color: "var(--text)",
-            }}
+              fontSize: "1rem",
+            } }
           >
             Please make sure you are connected to the right network (
-            {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
+            { CONFIG.NETWORK.NAME } Mainnet) and the correct address. Please note:
             Once you make the purchase, you cannot undo this action.
           </s.TextDescription>
           <s.SpacerSmall />

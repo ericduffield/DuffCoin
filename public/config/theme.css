@@ -1,426 +1,435 @@
 :root {
-  --text: #ffffff;
-  --white: #ffffff;
-  --background: #202020;
-  --primary: #007F9A;
-  --grey: #505050;
-  --primaryText: #007F9A;
-  --lightGrey: #777777;
-  --inverseGrey: #777777;
+	--text: #ffffff;
+	--white: #ffffff;
+	--background: #202020;
+	--primary: #007f9a;
+	--grey: #505050;
+	--primaryText: #007f9a;
+	--lightGrey: #777777;
+	--inverseGrey: #777777;
 
+	font-size: 125%;
 }
 
-.light-mode-variables{
-  --text: #202020;
-  --background: #ffffff;
-  --grey: #777777;
-  --primaryText: black;
-  --inverseGrey: var(--primary);
+.light-mode-variables {
+	--text: #202020;
+	--background: #ffffff;
+	--grey: #777777;
+	--primaryText: black;
+	--inverseGrey: var(--primary);
 }
 
-
-h3{
-  font-size: 2.3rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+h3 {
+	font-size: 2.3rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
 }
 
-a{
-  color: var(--text);
+a {
+	color: var(--text);
 }
 
-body{
-  background: var(--background);
-  color: var(--text);
+body {
+	background: var(--background);
+	color: var(--text);
 }
 
 nav {
 	display: flex;
-  height: 112px;
+	height: 112px;
 	justify-content: space-between;
-  align-items: center;
-  padding: 0rem 4rem;
-  border-bottom: 1px solid var(--grey);
+	align-items: center;
+	padding: 0rem 4rem;
+	border-bottom: 1px solid var(--grey);
 }
 
 nav a {
-  font-size: 2.5rem;
-  font-weight: 500;
+	font-size: 2.5rem;
+	font-weight: 500;
 }
 
-#name{
-  flex: 4;
+#name {
+	flex: 4;
 }
 
-#mode-text{
-  font-size: 1.1rem;
-  margin-bottom: 0;
+#mode-text {
+	font-size: 1.1rem;
+	margin-bottom: 0;
 }
 
-#dark-mode{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  -webkit-user-select: none; /* Safari */        
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
+#mode-logo {
+	font-size: 1.5rem;
 }
 
-#dark-mode:hover{
-  color: var(--primary);
+#dark-mode {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+#dark-mode:hover {
+	color: var(--primary);
 }
 
 nav img {
-  margin-left: 3rem;
-  height: 4rem;
-  width: 4rem;
-  border-radius: 0.5rem;;
+	margin-left: 3rem;
+	height: 4rem;
+	width: 4rem;
+	border-radius: 0.5rem;
 }
 
-#add{
-  grid-area: add;
+#add {
+	grid-area: add;
 }
 
-#add a{
-  background-color: var(--grey);
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;  
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  transition: all 0.4s ease-in-out;
-  cursor: pointer;
+#add a {
+	background-color: var(--grey);
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	transition: all 0.4s ease-in-out;
+	cursor: pointer;
 }
 
-#add-text{
-   text-align: center;
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+#add-text {
+	text-align: center;
+	font-size: 1.3rem;
+	margin-bottom: 1rem;
 }
 
-#add a:hover{
-  background-color: var(--primary);
+#add a:hover {
+	background-color: var(--primary);
 }
 
-#ticker{
-  font-size: 1.1rem;
-  margin-top: 0.2rem;
-  font-weight: 500;
+#ticker {
+	font-size: 1.1rem;
+	margin-top: 0.2rem;
+	font-weight: 500;
 }
 
-#addImg{
-  height: 3rem;
-  width: 3rem;
-  border-radius: 50%;
+#addImg {
+	height: 3rem;
+	width: 3rem;
+	border-radius: 50%;
 }
 
-.bold{
-  font-weight: 600;
+.bold {
+	font-weight: 600;
 }
 
-.container{
-  margin-top: 2rem;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
+.container {
+	margin-top: 2rem;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
 }
 
-#info{
-  font-size: 45px;
+#info {
+	font-size: 45px;
 }
 
-#top{
-  width: 80%;
-  display: grid;
-  grid-template-columns: 2fr 3fr 2fr;
-  grid-template-areas: 
-    "price buy add"
+#top {
+	width: 80%;
+	display: grid;
+	grid-template-columns: 2fr 3fr 2fr;
+	grid-template-areas: 'price buy add';
 }
 
-#price{
-  font-size: 1.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  grid-area: price;
+#price {
+	font-size: 1.3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	grid-area: price;
 }
 
-#priceName, #marketCap{
-  margin-bottom: 0.5rem;
+#priceName,
+#marketCap {
+	margin-bottom: 0.5rem;
 }
 
-#currency{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#currency {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-#currency p{
-  margin-right: 0.5rem;
+#currency p {
+	margin-right: 0.5rem;
 }
 
-#currency select{
-  background-color: var(--grey);
-  color: var(--text);
-  border: none;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.5rem;
-  font-size: 1.1rem;
+#currency select {
+	background-color: var(--grey);
+	color: var(--text);
+	border: none;
+	padding: 0.2rem 0.5rem;
+	border-radius: 0.5rem;
+	font-size: 1.1rem;
 }
 
-.center{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-#buySection{
-  grid-area: buy;
+#buySection {
+	grid-area: buy;
 }
 
-#buySection img{
-  height: 3rem;
+#buySection img {
+	height: 3rem;
 }
 
-#buySection p{
-  text-align: center;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+#buySection p {
+	text-align: center;
+	font-size: 1.4rem;
+	margin-bottom: 1rem;
 }
 
-#buy{
-  background-color: var(--grey);
-  transition: background-color 0.4s ease-in-out;
-  padding: 0.8rem 1.5rem 0.8rem 1.5rem;
-  border-radius: 0.5rem;
-  font-size: 1.1rem;
+#buy {
+	background-color: var(--grey);
+	transition: background-color 0.4s ease-in-out;
+	padding: 0.8rem 1.5rem 0.8rem 1.5rem;
+	border-radius: 0.5rem;
+	font-size: 1.1rem;
 }
 
-#buy:hover{
-  background-color: var(--primary);
+#buy:hover {
+	background-color: var(--primary);
 }
 
-#add h3{
-  text-align: center;
-  margin-bottom: 0.5rem;
+#add h3 {
+	text-align: center;
+	margin-bottom: 0.5rem;
 }
 
-#contract{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  overflow: hidden;
+#contract {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	overflow: hidden;
 }
 
-#contract h3{
-  margin-top: 2rem;
-  text-align: center;
+#contract h3 {
+	margin-top: 2rem;
+	text-align: center;
 }
 
-#contract div{
-  background-color: var(--grey);
-  border-radius: 0.5rem;
-  padding: 10px 10px;
-  margin: 0.5rem 0.5rem;
-  width: 29rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 80%;
+#contract div {
+	background-color: var(--grey);
+	border-radius: 0.5rem;
+	padding: 10px 10px;
+	margin: 0.5rem 0.5rem;
+	width: 29rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 80%;
 }
 
-#address{
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+#address {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-.hover{
-  cursor: pointer;
-  height: 2.2rem;
-  padding: 6px 9px;
-  border-radius: 0.5rem;
-  transition: all 0.3s;
-  display: flex;
-  align-items: center;
+.hover {
+	cursor: pointer;
+	height: 2.2rem;
+	padding: 6px 9px;
+	border-radius: 0.5rem;
+	transition: all 0.3s;
+	display: flex;
+	align-items: center;
 }
 
-.hover:hover{
-  background-color: var(--inverseGrey);
+.hover:hover {
+	background-color: var(--inverseGrey);
 }
 
-.hover img{
-  height: 1.1rem;
+.hover img {
+	height: 1.1rem;
 }
 
-#copied{
-  height: 2.2rem;
-  align-items: center;
-  justify-content: center;
-  display: none;
-  transition: 0.2s opacity;
+#copied {
+	height: 2.2rem;
+	align-items: center;
+	justify-content: center;
+	display: none;
+	transition: 0.2s opacity;
 }
 
-#socials{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+#socials {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-#socials h3{
-  margin-top: 1rem;
+#socials h3 {
+	margin-top: 1rem;
 }
 
-#socials ul{
-  list-style-type: none;
-  width: 80%;
-  max-width: 40rem;
-  font-weight: 400; 
-  align-items: center;
+#socials ul {
+	list-style-type: none;
+	width: 80%;
+	max-width: 40rem;
+	font-weight: 400;
+	align-items: center;
 }
 
-#socials a{
-  background-color: var(--grey);
-  padding: 0.9rem 0.9rem;
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 1.2rem;
-  transition: all 0.4s ease-in-out;
+#socials a {
+	background-color: var(--grey);
+	padding: 0.9rem 0.9rem;
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 1.2rem;
+	transition: all 0.4s ease-in-out;
 }
 
-#socials a:hover{
-  background-color: var(--primary);
-  color: var(--text);
+#socials a:hover {
+	background-color: var(--primary);
+	color: var(--text);
 }
 
-#socials p{
-  font-size: 1.3rem;
+#socials p {
+	font-size: 1.3rem;
 }
 
-#socials .socialName{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#socials .socialName {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-#socials img{
-  width: 3.2rem;
+#socials img {
+	width: 3.2rem;
 }
 
-#about{
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#about {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-#about span{
-  font-weight: 600;
+#about span {
+	font-weight: 600;
 }
 
-#about p{
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  width: 75%;
-  text-align: justify;
+#about p {
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+	width: 75%;
+	text-align: justify;
 }
 
-.link{
-  font-weight: 600;
-  transition: all 0.2s ease-in-out;
+.link {
+	font-weight: 600;
+	transition: all 0.2s ease-in-out;
 }
 
-.link:hover{
-  color: var(--primary);
+.link:hover {
+	color: var(--primary);
 }
 
-#tokenomics h3{
-  margin-top: 1rem;
-  text-align: center;
+#tokenomics h3 {
+	margin-top: 1rem;
+	text-align: center;
 }
 
-#tokenomics p{
-  font-size: 1.15rem;
-  margin-bottom: 1rem;
-  text-align: center;
+#tokenomics p {
+	font-size: 1.15rem;
+	margin-bottom: 1rem;
+	text-align: center;
 }
 
-#network{
-  margin-bottom: 0rem !important;
+#network {
+	margin-bottom: 0rem !important;
 }
 
-#tokenomics span{
-  font-weight: 600;
+#tokenomics span {
+	font-weight: 600;
 }
 
-#chart{
-  height: 32rem;
+#chart {
+	height: 32rem;
 }
 
-@media only screen and (max-width: 1075px){
-  #top{
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-    "buy buy"
-    "price add";
-  }
-    #buy{
-    margin-bottom: 2rem;
-  }
+@media only screen and (max-width: 1250px) {
+	:root {
+		font-size: 115%;
+	}
 
-
+	#top {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			'buy buy'
+			'price add';
+	}
+	#buy {
+		margin-bottom: 2rem;
+	}
 }
 
-@media only screen and (max-width: 850px){
-    #price{
-    margin-bottom: 2rem;
-  }
+@media only screen and (max-width: 850px) {
+	:root {
+		font-size: 100%;
+	}
 
-   #hideGif{
-    display: none;
-   }
+	#price {
+		margin-bottom: 2rem;
+	}
 
-   #hideSpacer{
-    display: none;
-   }
+	#hideGif {
+		display: none;
+	}
 
-   #dark-mode{
-    display: none;
-   }
+	#hideSpacer {
+		display: none;
+	}
 
-   nav{
-    padding: 0rem 2rem;
-   }
+	#dark-mode {
+		display: none;
+	}
 
-   
-  #top{
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-    "buy" 
-    "price"
-    "add"
-  }
+	nav {
+		padding: 0rem 2rem;
+	}
 
-  #info{
-    display: none;
-  }
+	#top {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			'buy'
+			'price'
+			'add';
+	}
 
-  #chart{
-    height: 25rem;
-  }
+	#info {
+		display: none;
+	}
+
+	#chart {
+		height: 25rem;
+	}
 }
