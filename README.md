@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Duff Coin</h1>
-  <a href="https://duffcoincrypto.com/">
+  <a href="https://duffcoincrypto.netlify.app/">
     <img width="150" src="https://raw.githubusercontent.com/ericduffield/DuffCoin/main/public/config/images/logo.png">
   </a>
   <br>
@@ -10,11 +10,11 @@
   <br>
 </div>
 
-[![Duff Coin Website](https://raw.githubusercontent.com/ericduffield/DuffCoin/main/Images/main-website.jpg)](https://duffcoincrypto.com/)
+[![Duff Coin Website](https://raw.githubusercontent.com/ericduffield/DuffCoin/main/Images/main-website.jpg)](https://duffcoincrypto.netlify.app/)
 
 # Features
 
-The [Duff Coin](https://duffcoincrypto.com/) website has the following sections:
+The [Duff Coin](https://duffcoincrypto.netlify.app/) website has the following sections:
 
 - Main section
   - This section shows the current price and maket cap of Duff Coin
@@ -39,7 +39,7 @@ The [Duff Coin](https://duffcoincrypto.com/) website has the following sections:
 
 # Duff Coin NFT Collection
   
-[![Duff Coin NFTs](https://raw.githubusercontent.com/ericduffield/DuffCoin/main/Images/nft-website.jpg)](https://duffcoincrypto.com/)
+[![Duff Coin NFTs](https://raw.githubusercontent.com/ericduffield/DuffCoin/main/Images/nft-website.jpg)](https://duffcoincrypto.netlify.app/)
 
 # About Duff Coin NFTs
 Duff Coin NFTs are a collection of NFTs that were made to go with Duff Coin.
@@ -50,4 +50,4 @@ The collection comprises of 30 unique NFTs and they retailed for 0.015 BNB.
 
 <br>
 
-[![Duff Coin NFTs](https://raw.githubusercontent.com/ericduffield/DuffCoin/main/Images/banner.png)](https://duffcoincrypto.com/)
+[![Duff Coin NFTs](https://raw.githubusercontent.com/ericduffield/DuffCoin/main/Images/banner.png)](https://duffcoincrypto.netlify.app/)
